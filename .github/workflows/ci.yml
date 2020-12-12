@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Twelve Step Programme
+    steps:
+    - id: ws1
+      name: whatever step 1
+      uses: jclulow/action-agogo
+      with:
+        colour: turquoise
+    - id: ws2
+      name: look at files...
+      run: pwd && find . -ls
