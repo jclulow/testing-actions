@@ -14,6 +14,7 @@ jobs:
       uses: jclulow/action-agogo@main
       with:
         colour: turquoise
+        secret: ${{ secrets.THE_PASSWORD }}
     - id: ws2
       name: look at files...
       run: pwd && find . -ls
