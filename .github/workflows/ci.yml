@@ -13,7 +13,10 @@ jobs:
       name: whatever step 1
       uses: jclulow/action-agogo@main
       with:
-        colour: turquoise
+        script: |
+          id -a
+          find -ls /var/tmp
+          env
         secret: ${{ secrets.THE_PASSWORD }}
     - id: ws2
       name: look at files...
