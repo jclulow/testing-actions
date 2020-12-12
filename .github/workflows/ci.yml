@@ -11,7 +11,7 @@ jobs:
     steps:
     - id: ws1
       name: whatever step 1
-      uses: jclulow/action-agogo
+      uses: jclulow/action-agogo@v1
       with:
         colour: turquoise
     - id: ws2
