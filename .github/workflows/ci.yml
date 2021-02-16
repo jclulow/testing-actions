@@ -20,6 +20,15 @@ jobs:
           banner tools
           pkg install git build-essential 
 
+          banner rustup
+          export RUSTUP_HOME=/rustup
+          export CARGO_HOME=/rustup
+          export PATH="$CARGO_HOME/bin:$PATH"
+          curl -sSf https://sh.rustup.rs | bash -s -- \
+              -y \
+              --default-toolchain stable \
+              --no-modify-path
+
           banner env
           env
 
