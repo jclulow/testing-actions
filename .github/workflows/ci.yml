@@ -9,15 +9,26 @@ jobs:
     runs-on: ubuntu-latest
     name: Twelve Step Programme
     steps:
-    - id: ws1
-      name: whatever step 1
-      uses: jclulow/action-agogo@main
+    - uses: jclulow/action-agogo@main
       with:
         script: |
+          banner info
           id -a
-          find -ls /var/tmp
+          uname -a
+          uptime
+
+          banner tools
+          pkg install git build-essential 
+
+          banner env
           env
+
+          cd testing
+
+          banner build
+          cargo build --release
+
+          banner test
+          cargo test --release
         secret: ${{ secrets.THE_PASSWORD }}
-    - id: ws2
-      name: look at files...
-      run: pwd && find . -ls
+        baseurl: https://sys.illumos.org/buildomat
